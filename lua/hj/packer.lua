@@ -39,6 +39,11 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- functional
+  use {"jose-elias-alvarez/null-ls.nvim"}
+  use {"moll/vim-bbye"} -- add macros
+  use {"numToStr/Comment.nvim"} -- use 'gc' to comment
+
   -- alpha commands
   use { "goolord/alpha-nvim" }
   use { "ahmedkhalf/project.nvim"}
@@ -66,5 +71,6 @@ return require('packer').startup(function(use)
   -- other plugins
   use { "lewis6991/impatient.nvim" } -- faster startup
   use({ "folke/which-key.nvim" })
+  use("simrat39/rust-tools.nvim")
 
 end)
