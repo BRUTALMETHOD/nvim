@@ -1,4 +1,14 @@
-return require('packer').startup(function(use)
+packer = require('packer')
+	-- Have packer use a popup window
+	packer.init({
+			display = {
+			open_fn = function()
+			return require("packer.util").float({ border = "rounded" })
+			end,
+			},
+			})
+
+return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use {
     'nvim-telescope/telescope.nvim',
@@ -43,6 +53,7 @@ return require('packer').startup(function(use)
   use {"jose-elias-alvarez/null-ls.nvim"}
   use {"moll/vim-bbye"} -- add macros
   use {"numToStr/Comment.nvim"} -- use 'gc' to comment
+  use {"akinsho/toggleterm.nvim"} -- toggleterm
 
   -- alpha commands
   use { "goolord/alpha-nvim" }

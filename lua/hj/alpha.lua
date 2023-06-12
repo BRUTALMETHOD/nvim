@@ -41,7 +41,7 @@ local function footer()
 	-- local fortune = handle:read("*a")
 	-- handle:close()
 	-- return fortune
-	return "俺はガンダム Ⓒ 2022"
+	return "俺はガンダム Ⓒ 2023"
 end
 
 dashboard.section.footer.val = footer()
