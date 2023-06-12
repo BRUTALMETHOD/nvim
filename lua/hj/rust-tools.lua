@@ -7,12 +7,14 @@ rt.setup({
       vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
       -- Code action groups
       vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+      vim.buf.formatting_sync()
     end,
   },
 })
 
 local opts = {
-  tools = { -- rust-tools options
+  tools = {
+            -- rust-tools options
 
     -- how to execute terminal commands
     -- options right now: termopen / quickfix
@@ -64,7 +66,6 @@ local opts = {
 
     -- options same as lsp hover / vim.lsp.util.open_floating_preview()
     hover_actions = {
-
       -- the border that is used for the hover window
       -- see vim.api.nvim_open_win()
       border = {
@@ -176,6 +177,13 @@ local opts = {
     standalone = true,
   }, -- rust-analyzer options
 
+  settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = { command = "clippy" },
+
+
+    }
+  },
   -- debugging stuff
   dap = {
     adapter = {
