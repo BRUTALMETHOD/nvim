@@ -16,8 +16,13 @@ require("lspconfig").rust_analyzer.setup {
   checkOnSave = { command = "clippy" }
 }
 
+lsp.setup_nvim_cmp({
+  preselect = 'none', -- maybe this is fighting with cmp select=false
+  completion = {
+    completeopt = 'menu,menuone,noinsert,noselect'
+  },
+})
 lsp.format_on_save({
-
   format_opts = {
     async = false,
     timeout_ms = 10000,
