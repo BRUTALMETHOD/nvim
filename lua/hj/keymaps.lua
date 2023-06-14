@@ -20,16 +20,20 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-h>", "<C-w>j", opts) -- no idea what does <C-w>h do
 keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-k>", "<C-w>k", opts) -- no idea what does <C-w>l do
+keymap("n", "<C-l>", "<C-w>k", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+-- Unmap
+keymap("n", "<S-k>", "<Nop>", opts) -- join line below
+keymap("n", "<S-j>", "<Nop>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -46,10 +50,10 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- keymap("n","<Right>","<nop>", opts)
 
 -- Insert --
--- Press jk fast to exit insert mode 
+-- Press jk fast to exit insert mode , and save
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-
+vim.cmd("autocmd InsertLeave * update")
 
 -- Visual --
 -- Stay in indent mode
