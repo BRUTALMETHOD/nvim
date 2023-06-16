@@ -1,12 +1,12 @@
 packer = require('packer')
-	-- Have packer use a popup window
-	packer.init({
-			display = {
-			open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-			end,
-			},
-			})
+-- Have packer use a popup window
+packer.init({
+  display = {
+    open_fn = function()
+      return require("packer.util").float({ border = "rounded" })
+    end,
+  },
+})
 
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
@@ -68,13 +68,16 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua" }
 
   -- color scheme
-  use { "folke/tokyonight.nvim" }
-  use { "lunarvim/darkplus.nvim" }
+  use ({ "folke/tokyonight.nvim"})
+  -- use { "lunarvim/darkplus.nvim" }
+  -- use { "rose-pine/neovim"}
+ --  use { "sts10/vim-pink-moon" }
+ -- use { "danilo-augusto/vim-afterglow"}
   use ({
     "xiyaowong/nvim-transparent",
     config = function()
       require("transparent").setup({
-        enable = true,
+        enable = false,
       })
     end,
   })
