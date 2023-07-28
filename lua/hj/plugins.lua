@@ -43,16 +43,7 @@ return packer.startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'}}
   }
-  use {
-    "folke/trouble.nvim",
-    config = function()
-      require("trouble").setup {
-        icon = false,
-        auto_open = true,
-        auto_close = true,
-      }
-    end
-  }
+  use { "folke/trouble.nvim" }
   use { "nvim-treesitter/nvim-treesitter" }
   use { "windwp/nvim-autopairs" }
   use {
