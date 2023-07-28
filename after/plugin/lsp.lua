@@ -1,9 +1,12 @@
+local status_ok, lsp = pcall(require, "lsp-zero")
+if not status_ok then
+	return
+end
+
+
 require('mason').setup()
 require('mason-lspconfig').setup()
 
-
-
-local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 lsp.ensure_installed = {
