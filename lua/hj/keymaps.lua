@@ -53,7 +53,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Press jk fast to exit insert mode , and save
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-vim.cmd("autocmd InsertLeave * update")
+-- vim.cmd("autocmd InsertLeave * update")
 
 -- Visual --
 -- Stay in indent mode
