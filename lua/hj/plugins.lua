@@ -43,8 +43,23 @@ return packer.startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'}}
   }
-  use { "folke/trouble.nvim" }
-  use { "nvim-treesitter/nvim-treesitter" }
+  use({
+      "folke/trouble.nvim",
+      config = function()
+          require("trouble").setup {
+              auto_open = true,
+              auto_close = false,
+              icons = false,
+              -- your configuration comes here
+              -- or leave it empty to use the default settings
+              -- refer to the configuration section below
+          }
+      end
+  })
+  use { "nvim-treesitter/nvim-treesitter", run = function()
+				local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+				ts_update()
+			end,}
   use { "windwp/nvim-autopairs" }
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -88,7 +103,13 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua" }
 
   -- color scheme
-  use ({ "folke/tokyonight.nvim"})
+  use ({ "folke/tokyonight.nvim",
+        config = function()
+          require("tokyonight").setup {
+            transparent = vim.g.transparent_enabled
+          }
+      end
+    })
   -- use { "lunarvim/darkplus.nvim" }
   -- use { "rose-pine/neovim"}
  --  use { "sts10/vim-pink-moon" }

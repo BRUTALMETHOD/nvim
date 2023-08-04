@@ -3,8 +3,8 @@ if not status_ok then
 	return
 end
 
-trouble.setup {
-  icon = false,
-  auto_open = true,
-  auto_close = true,
-}
+--trouble.setup {
+--  icon = false,
+--  auto_open = true,
+--  auto_close = true,
+--}
