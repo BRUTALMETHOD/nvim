@@ -104,11 +104,6 @@ return packer.startup(function(use)
 
   -- color scheme
   use ({ "folke/tokyonight.nvim",
-        config = function()
-          require("tokyonight").setup {
-            transparent = vim.g.transparent_enabled
-          }
-      end
     })
   -- use { "lunarvim/darkplus.nvim" }
   -- use { "rose-pine/neovim"}
