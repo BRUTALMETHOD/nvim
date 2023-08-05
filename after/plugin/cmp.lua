@@ -3,6 +3,7 @@ if not cmp_status_ok then
   return
 end
 
+
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
   return
@@ -118,7 +119,7 @@ cmp.setup {
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
+    select = true, -- set this to false if you want to disable <CR> for first item.
   },
   window = {
     documentation = {

@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+
+vim.opt.termguicolors = true
 bufferline.setup {
   options = {
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
@@ -15,8 +17,8 @@ bufferline.setup {
     -- as an escape hatch for people who cannot bear it for whatever reason
         indicator_icon = nil,
     indicator = { style = "icon", icon = "▎"},
-    buffer_close_icon = "",
-    -- buffer_close_icon = '',
+    -- buffer_close_icon = "",
+    buffer_close_icon = '',
     modified_icon = "●",
     close_icon = "",
     -- close_icon = '',
