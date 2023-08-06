@@ -22,7 +22,7 @@ require("lspconfig").rust_analyzer.setup {
 lsp.setup_nvim_cmp({
   preselect = true, -- maybe this is fighting with cmp select=false
   completion = {
-    completeopt = 'menu,menuone,noinsert,noselect'
+    completeopt = 'menu,menuone,noinsert'
   },
 })
 lsp.format_on_save({
