@@ -15,3 +15,6 @@ git clone https://github.com/BRUTALMETHOD/nvim \
 :MasonUpdate
 :TSUpdate
 ```
+
+## fonts
+https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
