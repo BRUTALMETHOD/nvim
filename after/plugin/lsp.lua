@@ -10,6 +10,7 @@ lsp.preset("recommended")
 lsp.ensure_installed = {
 	"tsserver",
 	"rust",
+	"gopls",
 }
 
 require("lspconfig").lua_ls.setup({})
@@ -64,5 +65,3 @@ require("lspconfig").pyright.setup({
 	end,
 })
 
-
--- lsp.setup()
