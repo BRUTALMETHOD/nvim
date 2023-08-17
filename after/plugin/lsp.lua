@@ -4,19 +4,26 @@ if not status_ok then
 end
 
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"lua_ls",
+		"tsserver",
+		"rust_analyzer",
+		"gopls",
+		"golangci_lint_ls",
+		"pyright",
+		"bashls",
+	},
+})
 
 lsp.preset("recommended")
-lsp.ensure_installed = {
-	"tsserver",
-	"rust",
-	"gopls",
-}
 
 require("lspconfig").lua_ls.setup({})
-require("lspconfig").rust_analyzer.setup({
-	checkOnSave = { command = "clippy" },
-})
+
+-- I thinks this not needed because we have rust-tools
+-- require("lspconfig").rust_analyzer.setup({
+-- 	checkOnSave = { command = "clippy" },
+-- })
 
 lsp.setup_nvim_cmp({
 	preselect = true, -- maybe this is fighting with cmp select=false
@@ -34,7 +41,6 @@ lsp.format_on_save({
 		["rust_analyzer"] = { "rust" },
 	},
 })
-
 
 local util = require("lspconfig/util")
 local path = util.path
@@ -64,4 +70,3 @@ require("lspconfig").pyright.setup({
 		config.settings.python.pythonPath = get_python_dir(config.root_dir)
 	end,
 })
-

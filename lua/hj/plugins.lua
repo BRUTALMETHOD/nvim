@@ -105,6 +105,7 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim" })
 	use("simrat39/rust-tools.nvim")
   use({"petobens/poet-v"}) -- for poetry venv with nvim
+  use("fatih/vim-go")
 
 	-- Auto setup after cloning
 	if packer_bootstrap then
