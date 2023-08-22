@@ -18,6 +18,7 @@ require("mason-lspconfig").setup({
 
 lsp.preset("recommended")
 
+require("lspconfig").taplo.setup({})
 require("lspconfig").lua_ls.setup({})
 
 -- I thinks this not needed because we have rust-tools
