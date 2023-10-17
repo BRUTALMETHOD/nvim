@@ -67,7 +67,7 @@ local function get_python_dir(workspace)
 end
 
 require("lspconfig").pyright.setup({
-	on_init = function(_, config)
-		config.settings.python.pythonPath = get_python_dir(config.root_dir)
-	end,
+	-- on_init = function(_, config)
+	-- 	 config.settings.python.pythonPath = get_python_dir(config.root_dir)
+	-- end,
 })
