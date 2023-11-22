@@ -71,3 +71,5 @@ require("lspconfig").pyright.setup({
 	-- 	 config.settings.python.pythonPath = get_python_dir(config.root_dir)
 	-- end,
 })
+
+require("lspconfig").terraformls.setup({cmd = {'terraform-ls','serve'}})
