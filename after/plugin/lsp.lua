@@ -20,6 +20,7 @@ lsp.preset("recommended")
 
 require("lspconfig").taplo.setup({})
 require("lspconfig").lua_ls.setup({})
+require("lspconfig").gopls.setup({})
 
 -- I thinks this not needed because we have rust-tools
 -- require("lspconfig").rust_analyzer.setup({
