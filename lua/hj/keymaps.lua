@@ -87,4 +87,3 @@ keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { silen
 keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
 keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
 keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
-

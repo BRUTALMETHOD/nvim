@@ -19,7 +19,15 @@ require("mason-lspconfig").setup({
 lsp.preset("recommended")
 
 require("lspconfig").taplo.setup({})
-require("lspconfig").lua_ls.setup({})
+require("lspconfig").lua_ls.setup({
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
+})
 require("lspconfig").gopls.setup({})
 
 -- I thinks this not needed because we have rust-tools
@@ -73,4 +81,5 @@ require("lspconfig").pyright.setup({
 	-- end,
 })
 
-require("lspconfig").terraformls.setup({cmd = {'terraform-ls','serve'}})
+require("lspconfig").terraformls.setup({ cmd = { "terraform-ls", "serve" } })
+require("lspconfig").ansiblels.setup({})

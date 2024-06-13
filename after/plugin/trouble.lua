@@ -3,8 +3,22 @@ if not status_ok then
 	return
 end
 
-trouble.setup {
-  icon = false,
-  auto_open = true,
-  auto_close = true,
-}
+trouble.setup({
+	modes = {
+		diagnostics = {
+			auto_open = true,
+			groups = {
+				{ "filename", format = "{file_icon} {basename:Title} {count}" },
+			},
+		},
+	},
+	icons = {
+		indent = {
+			middle = " ",
+			last = " ",
+			top = " ",
+			ws = "│  ",
+		},
+	},
+	auto_close = true,
+})
