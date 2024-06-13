@@ -11,7 +11,7 @@ require("mason-lspconfig").setup({
 		"rust_analyzer",
 		"gopls",
 		"golangci_lint_ls",
-		"pyright",
+		"ruff",
 		"bashls",
 	},
 })
@@ -75,7 +75,8 @@ local path = util.path
 -- 	return exepath("python3") or exepath("python") or "python"
 -- end
 
-require("lspconfig").pyright.setup({})
+require("lspconfig").ruff.setup({})
+-- require("lspconfig").pyright.setup({})
 -- require("lspconfig").pyright.setup({
 -- 	on_init = function(_, config)
 -- 		local poetry_match = vim.fn.glob(path.join(config.root_dir, "poetry.lock"))
