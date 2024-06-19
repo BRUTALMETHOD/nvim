@@ -77,15 +77,15 @@ local path = util.path
 
 require("lspconfig").ruff.setup({})
 -- require("lspconfig").pyright.setup({})
--- require("lspconfig").pyright.setup({
--- 	on_init = function(_, config)
--- 		local poetry_match = vim.fn.glob(path.join(config.root_dir, "poetry.lock"))
--- 		if poetry_match ~= "" then
--- 			pcall(vim.cmd, "PoetvActivate")
--- 		end
--- 		-- config.settings.python.pythonPath = get_python_dir(config.root_dir)
--- 	end,
--- })
+require("lspconfig").pyright.setup({
+	on_init = function(_, config)
+		local poetry_match = vim.fn.glob(path.join(config.root_dir, "poetry.lock"))
+		if poetry_match ~= "" then
+			pcall(vim.cmd, "PoetvActivate")
+		end
+		-- config.settings.python.pythonPath = get_python_dir(config.root_dir)
+	end,
+})
 
 require("lspconfig").terraformls.setup({ cmd = { "terraform-ls", "serve" } })
 require("lspconfig").ansiblels.setup({})
